@@ -6,11 +6,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    var overlayWindow: NSWindow?
    let settings = OverlaySettings()
    var preferencesWindowController: PreferencesWindowController?
+   var popover: NSPopover?
    
    func applicationDidFinishLaunching(_ notification: Notification) {
       setupStatusItem()
       setupOverlayWindow()
       setupPreferencesWindow()
+      setupPopover()
       
       NSApplication.shared.mainMenu = buildMenu()
    }
@@ -23,12 +25,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       preferencesWindowController?.showWindow(nil)
    }
    
+   @objc func showAboutPanel() {
+      NSApplication.shared.orderFrontStandardAboutPanel(nil)
+   }
+   
    
    func setupStatusItem() {
       statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
       if let button = statusItem?.button {
          button.image = NSImage(systemSymbolName: "rectangle.inset.filled", accessibilityDescription: nil)
-         button.action = #selector(toggleOverlay)
+         button.action = #selector(handleStatusItemAction(_:))
+         button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+      }
+   }
+   
+   @objc func handleStatusItemAction(_ sender: NSStatusBarButton) {
+      if let event = NSApp.currentEvent {
+         if event.type == .rightMouseUp {
+            statusItem?.menu = createRightClickMenu()
+            statusItem?.button?.performClick(nil)
+         } else {
+            toggleOverlay()
+         }
       }
    }
    
@@ -41,6 +59,40 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       
       statusItem?.button?.performClick(nil)
    }
+   
+   func setupPopover() {
+      popover = NSPopover()
+      popover?.contentSize = NSSize(width: 300, height: 200)
+      popover?.behavior = .transient
+      popover?.contentViewController = NSHostingController(rootView: ContentView().environmentObject(settings))
+   }
+   
+   @objc func togglePopover(_ sender: NSStatusBarButton) {
+      if let event = NSApp.currentEvent {
+         if event.type == .rightMouseUp {
+            statusItem?.menu = createRightClickMenu()
+            statusItem?.button?.performClick(nil)
+         } else {
+            if let popover = popover {
+               if popover.isShown {
+                  popover.performClose(sender)
+               } else {
+                  popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .minY)
+               }
+            }
+         }
+      }
+   }
+   
+   func createRightClickMenu() -> NSMenu {
+      let menu = NSMenu()
+      menu.addItem(NSMenuItem(title: "Preferences...", action: #selector(showPreferences), keyEquivalent: ","))
+      menu.addItem(NSMenuItem.separator())
+      menu.addItem(NSMenuItem(title: "About MedgeGlow", action: #selector(showAboutPanel), keyEquivalent: ""))
+      menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+      return menu
+   }
+   
    
    func createMenu() -> NSMenu {
       let menu = NSMenu()
@@ -60,6 +112,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          overlayWindow?.makeKeyAndOrderFront(nil)
       }
    }
+   
    
    func setupOverlayWindow() {
       let screen = NSScreen.main ?? NSScreen.screens[0]
