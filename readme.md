@@ -10,4 +10,5 @@ Currently, there is no packaged release of MedgeGlow. You are welcome to compile
 
 <br />
 
-https://github.com/user-attachments/assets/f9aef4da-3922-4c5e-ad89-0b4e4c566d35
+https://github.com/user-attachments/assets/b775812a-2cfb-411e-92f4-55151643d615
+
