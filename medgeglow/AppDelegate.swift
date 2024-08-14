@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       
       let hostingView = NSHostingView(rootView: OverlayView().environmentObject(settings))
       overlayWindow?.contentView = hostingView
-      overlayWindow?.makeKeyAndOrderFront(nil)
+      overlayWindow?.orderFront(nil)
    }
    
    private func setupPreferencesWindow() {
@@ -90,11 +90,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
    }
    
-   @objc private func toggleOverlay() {
+   @objc func toggleOverlay() {
       if overlayWindow?.isVisible == true {
          overlayWindow?.orderOut(nil)
       } else {
-         overlayWindow?.makeKeyAndOrderFront(nil)
+         overlayWindow?.orderFront(nil)
       }
    }
    
