@@ -1,17 +1,12 @@
-//
-//  medgeglowApp.swift
-//  medgeglow
-//
-//  Created by jade on 2024/8/13.
-//
-
 import SwiftUI
 
 @main
-struct medgeglowApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+struct MedgeGlow: App {
+   @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+   
+   var body: some Scene {
+      WindowGroup {
+         ContentView()
+      }
+   }
 }
