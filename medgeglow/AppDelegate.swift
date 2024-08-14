@@ -5,14 +5,39 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    var statusItem: NSStatusItem?
    var overlayWindow: NSWindow?
    let settings = OverlaySettings()
+   var preferencesWindowController: PreferencesWindowController?
    
    func applicationDidFinishLaunching(_ notification: Notification) {
+      setupStatusItem()
+      setupOverlayWindow()
+      setupPreferencesWindow()
+      
+      NSApplication.shared.mainMenu = buildMenu()
+   }
+   
+   func setupPreferencesWindow() {
+      preferencesWindowController = PreferencesWindowController(settings: settings)
+   }
+   
+   @objc func showPreferences() {
+      preferencesWindowController?.showWindow(nil)
+   }
+   
+   
+   func setupStatusItem() {
       statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
       if let button = statusItem?.button {
          button.image = NSImage(systemSymbolName: "rectangle.inset.filled", accessibilityDescription: nil)
+         button.action = #selector(toggleOverlay)
       }
-      
-      setupOverlayWindow()
+   }
+   
+   @objc func toggleOverlay() {
+      if overlayWindow?.isVisible == true {
+         overlayWindow?.orderOut(nil)
+      } else {
+         overlayWindow?.makeKeyAndOrderFront(nil)
+      }
    }
    
    func setupOverlayWindow() {
@@ -31,5 +56,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       )
       overlayWindow?.contentView = hostingView
       overlayWindow?.makeKeyAndOrderFront(nil)
+   }
+   
+   func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+      return false
+   }
+}
+
+extension AppDelegate {
+   func buildMenu() -> NSMenu {
+      let mainMenu = NSMenu()
+      
+      let appMenuItem = NSMenuItem()
+      appMenuItem.submenu = NSMenu(title: "App")
+      mainMenu.addItem(appMenuItem)
+      
+      let appMenu = appMenuItem.submenu!
+      appMenu.addItem(NSMenuItem(title: "About Color Overlay", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: ""))
+      appMenu.addItem(NSMenuItem.separator())
+      appMenu.addItem(NSMenuItem(title: "Preferences...", action: #selector(showPreferences), keyEquivalent: ","))
+      appMenu.addItem(NSMenuItem.separator())
+      appMenu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+      
+      return mainMenu
    }
 }
