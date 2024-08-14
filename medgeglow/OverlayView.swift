@@ -4,7 +4,7 @@ struct OverlayView: View {
    @EnvironmentObject var settings: OverlaySettings
    
    private var overlayColor: Color {
-      Color(red: settings.red, green: settings.green, blue: settings.blue)
+      Color(red: settings.red, green: settings.green, blue: settings.blue, opacity: settings.alpha)
    }
    
    var body: some View {

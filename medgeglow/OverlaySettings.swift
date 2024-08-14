@@ -10,6 +10,9 @@ class OverlaySettings: ObservableObject {
    @Published var blue: Double {
       didSet { UserDefaults.standard.set(blue, forKey: "overlayColorBlue") }
    }
+   @Published var alpha: Double {
+      didSet { UserDefaults.standard.set(alpha, forKey: "overlayColorAlpha") }
+   }
    @Published var distance: Double {
       didSet { UserDefaults.standard.set(distance, forKey: "distance") }
    }
@@ -21,14 +24,16 @@ class OverlaySettings: ObservableObject {
       self.red = UserDefaults.standard.double(forKey: "overlayColorRed")
       self.green = UserDefaults.standard.double(forKey: "overlayColorGreen")
       self.blue = UserDefaults.standard.double(forKey: "overlayColorBlue")
+      self.alpha = UserDefaults.standard.double(forKey: "overlayColorAlpha")
       self.distance = UserDefaults.standard.double(forKey: "distance")
       self.fade = UserDefaults.standard.double(forKey: "fade")
       
       // Set default values if not already set
-      if self.red == 0 && self.green == 0 && self.blue == 0 {
+      if self.red == 0 && self.green == 0 && self.blue == 0 && self.alpha == 0 {
          self.red = 1.0
          self.green = 0.0
          self.blue = 0.0
+         self.alpha = 1.0
       }
       if self.distance == 0 {
          self.distance = 50
