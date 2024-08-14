@@ -72,9 +72,9 @@ extension AppDelegate {
       mainMenu.addItem(appMenuItem)
       
       let appMenu = appMenuItem.submenu!
-      appMenu.addItem(NSMenuItem(title: "About Color Overlay", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: ""))
+      appMenu.addItem(NSMenuItem(title: "About MedgeGlow", action: #selector(NSApplication.orderFrontStandardAboutPanel(_:)), keyEquivalent: ""))
       appMenu.addItem(NSMenuItem.separator())
-      appMenu.addItem(NSMenuItem(title: "Preferences...", action: #selector(showPreferences), keyEquivalent: ","))
+      appMenu.addItem(NSMenuItem(title: "Settings...", action: #selector(showPreferences), keyEquivalent: ","))
       appMenu.addItem(NSMenuItem.separator())
       appMenu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
       
