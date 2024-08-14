@@ -42,8 +42,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    @objc func handleStatusItemAction(_ sender: NSStatusBarButton) {
       if let event = NSApp.currentEvent {
          if event.type == .rightMouseUp {
-            statusItem?.menu = createRightClickMenu()
+            let menu = createRightClickMenu()
+            statusItem?.menu = menu
             statusItem?.button?.performClick(nil)
+            statusItem?.menu = nil
          } else {
             toggleOverlay()
          }
@@ -70,8 +72,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    @objc func togglePopover(_ sender: NSStatusBarButton) {
       if let event = NSApp.currentEvent {
          if event.type == .rightMouseUp {
-            statusItem?.menu = createRightClickMenu()
+            let menu = createRightClickMenu()
+            statusItem?.menu = menu
             statusItem?.button?.performClick(nil)
+            statusItem?.menu = nil
          } else {
             if let popover = popover {
                if popover.isShown {
