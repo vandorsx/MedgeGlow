@@ -7,6 +7,7 @@ struct MedgeGlow: App {
    var body: some Scene {
       WindowGroup {
          ContentView()
+            .environmentObject(appDelegate.settings)
       }
    }
 }

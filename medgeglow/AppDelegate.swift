@@ -4,6 +4,7 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
    var statusItem: NSStatusItem?
    var overlayWindow: NSWindow?
+   let settings = OverlaySettings()
    
    func applicationDidFinishLaunching(_ notification: Notification) {
       statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
@@ -24,7 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       overlayWindow?.backgroundColor = .clear
       overlayWindow?.ignoresMouseEvents = true
       
-      let hostingView = NSHostingView(rootView: OverlayView())
+      let hostingView = NSHostingView(rootView:
+                                       OverlayView()
+         .environmentObject(settings)
+      )
       overlayWindow?.contentView = hostingView
       overlayWindow?.makeKeyAndOrderFront(nil)
    }
