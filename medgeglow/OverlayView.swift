@@ -12,39 +12,64 @@ struct OverlayView: View {
          ZStack {
             Color.clear
             
-            // Top edge
-            LinearGradient(gradient: Gradient(colors: [overlayColor, Color.clear]),
-                           startPoint: .top,
-                           endPoint: .bottom)
-            .frame(height: CGFloat(settings.distance))
-            .opacity(settings.fade)
-            .offset(y: -geometry.size.height / 2 + CGFloat(settings.distance) / 2)
+            EdgeOverlay(
+               color: overlayColor,
+               fade: settings.fade,
+               distance: settings.distance,
+               gradientStartPoint: .top,
+               gradientEndPoint: .bottom,
+               offset: CGSize(width: 0, height: -geometry.size.height / 2 + CGFloat(settings.distance) / 2)
+            )
             
-            // Bottom edge
-            LinearGradient(gradient: Gradient(colors: [overlayColor, Color.clear]),
-                           startPoint: .bottom,
-                           endPoint: .top)
-            .frame(height: CGFloat(settings.distance))
-            .opacity(settings.fade)
-            .offset(y: geometry.size.height / 2 - CGFloat(settings.distance) / 2)
+            EdgeOverlay(
+               color: overlayColor,
+               fade: settings.fade,
+               distance: settings.distance,
+               gradientStartPoint: .bottom,
+               gradientEndPoint: .top,
+               offset: CGSize(width: 0, height: geometry.size.height / 2 - CGFloat(settings.distance) / 2)
+            )
             
-            // Left edge
-            LinearGradient(gradient: Gradient(colors: [overlayColor, Color.clear]),
-                           startPoint: .leading,
-                           endPoint: .trailing)
-            .frame(width: CGFloat(settings.distance))
-            .opacity(settings.fade)
-            .offset(x: -geometry.size.width / 2 + CGFloat(settings.distance) / 2)
+            EdgeOverlay(
+               color: overlayColor,
+               fade: settings.fade,
+               distance: settings.distance,
+               gradientStartPoint: .leading,
+               gradientEndPoint: .trailing,
+               offset: CGSize(width: -geometry.size.width / 2 + CGFloat(settings.distance) / 2, height: 0)
+            )
             
-            // Right edge
-            LinearGradient(gradient: Gradient(colors: [overlayColor, Color.clear]),
-                           startPoint: .trailing,
-                           endPoint: .leading)
-            .frame(width: CGFloat(settings.distance))
-            .opacity(settings.fade)
-            .offset(x: geometry.size.width / 2 - CGFloat(settings.distance) / 2)
+            EdgeOverlay(
+               color: overlayColor,
+               fade: settings.fade,
+               distance: settings.distance,
+               gradientStartPoint: .trailing,
+               gradientEndPoint: .leading,
+               offset: CGSize(width: geometry.size.width / 2 - CGFloat(settings.distance) / 2, height: 0)
+            )
          }
       }
       .ignoresSafeArea()
+   }
+}
+
+struct EdgeOverlay: View {
+   var color: Color
+   var fade: Double
+   var distance: Double
+   var gradientStartPoint: UnitPoint
+   var gradientEndPoint: UnitPoint
+   var offset: CGSize
+   
+   var body: some View {
+      LinearGradient(
+         gradient: Gradient(colors: [color, Color.clear]),
+         startPoint: gradientStartPoint,
+         endPoint: gradientEndPoint
+      )
+      .frame(width: gradientStartPoint == .leading || gradientStartPoint == .trailing ? CGFloat(distance) : nil,
+             height: gradientStartPoint == .top || gradientStartPoint == .bottom ? CGFloat(distance) : nil)
+      .opacity(fade)
+      .offset(offset)
    }
 }
