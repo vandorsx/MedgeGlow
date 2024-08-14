@@ -110,7 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    
    private func createRightClickMenu() -> NSMenu {
       let menu = NSMenu()
-      menu.addItem(NSMenuItem(title: "Preferences...", action: #selector(showPreferences), keyEquivalent: ","))
+      menu.addItem(NSMenuItem(title: "Settings...", action: #selector(showPreferences), keyEquivalent: ","))
       menu.addItem(NSMenuItem.separator())
       menu.addItem(NSMenuItem(title: "About MedgeGlow", action: #selector(showAboutPanel), keyEquivalent: ""))
       menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
