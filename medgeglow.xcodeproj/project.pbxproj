@@ -35,16 +35,6 @@
 			path = medgeglow;
 			sourceTree = "<group>";
 		};
-		07DACFE52C6C3E8F00416822 /* medgeglowTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = medgeglowTests;
-			sourceTree = "<group>";
-		};
-		07DACFEF2C6C3E8F00416822 /* medgeglowUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = medgeglowUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				07DACFD32C6C3E8E00416822 /* medgeglow */,
-				07DACFE52C6C3E8F00416822 /* medgeglowTests */,
-				07DACFEF2C6C3E8F00416822 /* medgeglowUITests */,
 				07DACFD22C6C3E8E00416822 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				07DACFE42C6C3E8F00416822 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				07DACFE52C6C3E8F00416822 /* medgeglowTests */,
-			);
 			name = medgeglowTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				07DACFEE2C6C3E8F00416822 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				07DACFEF2C6C3E8F00416822 /* medgeglowUITests */,
 			);
 			name = medgeglowUITests;
 			packageProductDependencies = (
