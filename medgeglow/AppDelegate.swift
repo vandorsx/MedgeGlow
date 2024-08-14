@@ -32,6 +32,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
    }
    
+   @objc func toggleMenu() {
+      if statusItem?.menu == nil {
+         statusItem?.menu = createMenu()
+      } else {
+         statusItem?.menu = nil
+      }
+      
+      statusItem?.button?.performClick(nil)
+   }
+   
+   func createMenu() -> NSMenu {
+      let menu = NSMenu()
+      
+      menu.addItem(NSMenuItem(title: "Toggle Overlay", action: #selector(toggleOverlay), keyEquivalent: ""))
+      menu.addItem(NSMenuItem(title: "Preferences...", action: #selector(showPreferences), keyEquivalent: ","))
+      menu.addItem(NSMenuItem.separator())
+      menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+      
+      return menu
+   }
+   
    @objc func toggleOverlay() {
       if overlayWindow?.isVisible == true {
          overlayWindow?.orderOut(nil)
