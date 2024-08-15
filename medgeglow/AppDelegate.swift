@@ -90,11 +90,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       }
    }
    
+   private func updateStatusItemImage(isOverlayVisible: Bool) {
+      let imageName = isOverlayVisible ? "rectangle.inset.filled" : "rectangle"
+      statusItem?.button?.image = NSImage(systemSymbolName: imageName, accessibilityDescription: nil)
+   }
+   
    @objc func toggleOverlay() {
       if overlayWindow?.isVisible == true {
          overlayWindow?.orderOut(nil)
+         updateStatusItemImage(isOverlayVisible: false)
       } else {
          overlayWindow?.orderFront(nil)
+         updateStatusItemImage(isOverlayVisible: true)
       }
    }
    
