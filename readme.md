@@ -6,9 +6,6 @@ A simple menu bar app to overlay a colored glow around your display.
 
 MedgeGlow was created to help mitigate my monitor's backlight bleed. Around the edges of my monitor is a light pink-ish tint — by overlaying a light green tint, I'm able to counteract the backlight bleed to some extent.
 
-Currently, there is no packaged release of MedgeGlow. You are welcome to compile it for yourself.
-
 <br />
 
 https://github.com/user-attachments/assets/b775812a-2cfb-411e-92f4-55151643d615
-
