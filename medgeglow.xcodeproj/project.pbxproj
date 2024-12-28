@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		07DACFE32C6C3E8F00416822 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07DACFC92C6C3E8E00416822 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07DACFD02C6C3E8E00416822;
-			remoteInfo = medgeglow;
-		};
-		07DACFED2C6C3E8F00416822 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 07DACFC92C6C3E8E00416822 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07DACFD02C6C3E8E00416822;
-			remoteInfo = medgeglow;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		07DACFD12C6C3E8E00416822 /* MedgeGlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedgeGlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		07DACFE22C6C3E8F00416822 /* medgeglowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = medgeglowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07DACFEC2C6C3E8F00416822 /* medgeglowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = medgeglowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -39,20 +20,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		07DACFCE2C6C3E8E00416822 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07DACFDF2C6C3E8F00416822 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07DACFE92C6C3E8F00416822 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				07DACFD12C6C3E8E00416822 /* MedgeGlow.app */,
-				07DACFE22C6C3E8F00416822 /* medgeglowTests.xctest */,
-				07DACFEC2C6C3E8F00416822 /* medgeglowUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,46 +70,6 @@
 			productReference = 07DACFD12C6C3E8E00416822 /* MedgeGlow.app */;
 			productType = "com.apple.product-type.application";
 		};
-		07DACFE12C6C3E8F00416822 /* medgeglowTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07DACFF92C6C3E8F00416822 /* Build configuration list for PBXNativeTarget "medgeglowTests" */;
-			buildPhases = (
-				07DACFDE2C6C3E8F00416822 /* Sources */,
-				07DACFDF2C6C3E8F00416822 /* Frameworks */,
-				07DACFE02C6C3E8F00416822 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07DACFE42C6C3E8F00416822 /* PBXTargetDependency */,
-			);
-			name = medgeglowTests;
-			packageProductDependencies = (
-			);
-			productName = medgeglowTests;
-			productReference = 07DACFE22C6C3E8F00416822 /* medgeglowTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		07DACFEB2C6C3E8F00416822 /* medgeglowUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07DACFFC2C6C3E8F00416822 /* Build configuration list for PBXNativeTarget "medgeglowUITests" */;
-			buildPhases = (
-				07DACFE82C6C3E8F00416822 /* Sources */,
-				07DACFE92C6C3E8F00416822 /* Frameworks */,
-				07DACFEA2C6C3E8F00416822 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07DACFEE2C6C3E8F00416822 /* PBXTargetDependency */,
-			);
-			name = medgeglowUITests;
-			packageProductDependencies = (
-			);
-			productName = medgeglowUITests;
-			productReference = 07DACFEC2C6C3E8F00416822 /* medgeglowUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -153,18 +78,10 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					07DACFD02C6C3E8E00416822 = {
 						CreatedOnToolsVersion = 16.1;
-					};
-					07DACFE12C6C3E8F00416822 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 07DACFD02C6C3E8E00416822;
-					};
-					07DACFEB2C6C3E8F00416822 = {
-						CreatedOnToolsVersion = 16.1;
-						TestTargetID = 07DACFD02C6C3E8E00416822;
 					};
 				};
 			};
@@ -183,28 +100,12 @@
 			projectRoot = "";
 			targets = (
 				07DACFD02C6C3E8E00416822 /* MedgeGlow */,
-				07DACFE12C6C3E8F00416822 /* medgeglowTests */,
-				07DACFEB2C6C3E8F00416822 /* medgeglowUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		07DACFCF2C6C3E8E00416822 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07DACFE02C6C3E8F00416822 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07DACFEA2C6C3E8F00416822 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -221,34 +122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07DACFDE2C6C3E8F00416822 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07DACFE82C6C3E8F00416822 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		07DACFE42C6C3E8F00416822 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07DACFD02C6C3E8E00416822 /* MedgeGlow */;
-			targetProxy = 07DACFE32C6C3E8F00416822 /* PBXContainerItemProxy */;
-		};
-		07DACFEE2C6C3E8F00416822 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07DACFD02C6C3E8E00416822 /* MedgeGlow */;
-			targetProxy = 07DACFED2C6C3E8F00416822 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		07DACFF42C6C3E8F00416822 /* Debug */ = {
@@ -285,6 +159,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -348,6 +223,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -376,10 +252,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = medgeglow/medgeglow.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"medgeglow/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MedgeGlow;
@@ -390,8 +271,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = me.inthetrees.medgeglow;
+				PRODUCT_BUNDLE_IDENTIFIER = sx.vandor.medgeglow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -404,10 +286,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = medgeglow/medgeglow.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"medgeglow/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = MedgeGlow;
@@ -418,74 +305,11 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = me.inthetrees.medgeglow;
+				PRODUCT_BUNDLE_IDENTIFIER = sx.vandor.medgeglow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		07DACFFA2C6C3E8F00416822 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.inthetrees.medgeglowTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/medgeglow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/medgeglow";
-			};
-			name = Debug;
-		};
-		07DACFFB2C6C3E8F00416822 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 15.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.inthetrees.medgeglowTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/medgeglow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/medgeglow";
-			};
-			name = Release;
-		};
-		07DACFFD2C6C3E8F00416822 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.inthetrees.medgeglowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = medgeglow;
-			};
-			name = Debug;
-		};
-		07DACFFE2C6C3E8F00416822 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.inthetrees.medgeglowUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = medgeglow;
 			};
 			name = Release;
 		};
@@ -506,24 +330,6 @@
 			buildConfigurations = (
 				07DACFF72C6C3E8F00416822 /* Debug */,
 				07DACFF82C6C3E8F00416822 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07DACFF92C6C3E8F00416822 /* Build configuration list for PBXNativeTarget "medgeglowTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07DACFFA2C6C3E8F00416822 /* Debug */,
-				07DACFFB2C6C3E8F00416822 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07DACFFC2C6C3E8F00416822 /* Build configuration list for PBXNativeTarget "medgeglowUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07DACFFD2C6C3E8F00416822 /* Debug */,
-				07DACFFE2C6C3E8F00416822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
